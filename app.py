@@ -21,6 +21,13 @@ st.set_page_config(
     layout="wide"
 )
 
+st.markdown('''
+       <style>
+       [kind="primaryFormSubmit"] {
+              background: rgb(55, 55, 63) !important;
+       }
+       </style>''', unsafe_allow_html=True)
+
 st.markdown(f'''
     <h1 style="text-align: center; font-size: 26px; font-weight: bold; color: black; background: transparent; border-radius: 0rem; margin-bottom: 15px; border-bottom: 1px solid black;">
     {title}
