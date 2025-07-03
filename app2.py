@@ -46,7 +46,7 @@ with st.form("form"):
     
     m = M # st.multiselect("Model Select", M, M)
     
-    st.markdown(f"<div style='{header_style}'>Model Input</div>", unsafe_allow_html=True)
+    # st.markdown(f"<div style='{header_style}'>Model Input</div>", unsafe_allow_html=True)
     c = st.columns(6)
     data["Age"] = c[0].number_input("Age (years)", min_value=0, max_value=120, value=originv["Age"])
     data["Malignant Cancer"] = BOOL[c[1].selectbox("Malignant Cancer", BOOL, index=originv["Malignant Cancer"])]
