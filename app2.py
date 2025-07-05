@@ -97,7 +97,7 @@ with st.expander("", True):
         Please click 'Start predict' button to start predict!!!
         </div>''', unsafe_allow_html=True)
 
-info1 = '''This web-based calculator utilizes the LASSO model (AUC 0.833, 95% CI: 0.791-0.871; Brier score 0.143; high-risk threshold ≥18.5%) and the Naive Bayes model (AUC 0.815, 95% CI: 0.767-0.856; Brier score 0.166; high-risk threshold ≥7.8%) to assess 30-day mortality risk'''
+info1 = '''This web-based calculator utilizes the LASSO model (AUC 0.833, 95% CI: 0.791-0.871; Brier score 0.143; high-risk threshold ≥18.5%) and the Naive Bayes model (AUC 0.815, 95% CI: 0.767-0.856; Brier score 0.166; high-risk threshold ≥7.8%) to assess 30-day mortality risk.'''
 info2 = '''Vital signs are averaged over the first 24 hours post-lCU admission, laboratory parameters are recorded at peak severity during the ICU stay, and LAR is the initial lactate (mmol/L) to albumin (g/dL) ratio.'''
 with st.expander("", True): 
     st.markdown(f'''
