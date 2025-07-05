@@ -42,36 +42,31 @@ M = ["LASSO (Model A)", "Naive Bayes (Model B)"]
 data = {}
 
 with st.form("form"):
-    #st.markdown(f"<div style='{header_style}'>Model Select</div>", unsafe_allow_html=True)
-    
-    m = M # st.multiselect("Model Select", M, M)
-    
-    # st.markdown(f"<div style='{header_style}'>Model Input</div>", unsafe_allow_html=True)
     c = st.columns(6)
     data["Age"] = c[0].number_input("Age (years)", min_value=0, max_value=120, value=originv["Age"])
-    data["Malignant Cancer"] = BOOL[c[1].selectbox("Malignant Cancer", BOOL, index=originv["Malignant Cancer"])]
-    data["AKI 7Day"] = BOOL[c[2].selectbox("AKI 7 Day", BOOL, index=originv["AKI 7Day"])]
-    data["GCS"] = c[3].number_input("GCS Score", min_value=0.00, step=0.01, value=originv["GCS"]-0.01+0.01)
-    data["LAR"] = c[4].number_input("LAR", min_value=0.00, step=0.01, value=originv["LAR"]-0.01+0.01)
-    data["Sepsis"] = BOOL[c[5].selectbox("Sepsis", BOOL, index=originv["Sepsis"])]
-    data["BUN"] = c[0].number_input("BUN (mg/dL)", min_value=0.00, step=0.01, value=originv["BUN"]-0.01+0.01)
-    data["SBP"] = c[1].number_input("SBP (mmHg)", min_value=0.00, step=0.01, value=originv["SBP"]-0.01+0.01)
-    data["Aniongap"] = c[2].number_input("Aniongap (mmol/L)", min_value=0.00, step=0.01, value=originv["Aniongap"]-0.01+0.01)
-    data["ALP"] = c[3].number_input("ALP (U/L)", min_value=0.00, step=0.01, value=originv["ALP"]-0.01+0.01)
-    data["DBP"] = c[4].number_input("DBP (mmHg)", min_value=0.00, step=0.01, value=originv["DBP"]-0.01+0.01)
-    data["APTT"] = c[5].number_input("APTT (s)", min_value=0.00, step=0.01, value=originv["APTT"]-0.01+0.01)
-    data["Temperature"] = c[0].number_input("Temperature (℃)", min_value=0.00, step=0.01, value=originv["Temperature"]-0.01+0.01)
-    data["Hemoglobin"] = c[1].number_input("Hemoglobin (g/dL)", min_value=0.00, step=0.01, value=originv["Hemoglobin"]-0.01+0.01)
-    data["Total Bilirubin"] = c[2].number_input("Total Bilirubin(mg/dL)", min_value=0.00, step=0.01, value=originv["Total Bilirubin"]-0.01+0.01)
-    data["Chloride"] = c[3].number_input("Chloride (mmol/L)", min_value=0.00, step=0.01, value=originv["Chloride"]-0.01+0.01)
-    data["InvasiveVent"] = BOOL[c[4].selectbox("Invasive Vent", BOOL, index=originv["InvasiveVent"])]
-    data["Weight Admit"] = c[5].number_input("Weight Admit (kg)", min_value=0.00, step=0.01, value=originv["Weight Admit"]-0.01+0.01)
-    data["MBP"] = c[0].number_input("MBP (mmHg)", min_value=0.00, step=0.01, value=originv["MBP"]-0.01+0.01)
-    data["Sodium"] = c[1].number_input("Sodium (mmol/L)", min_value=0.00, step=0.01, value=originv["Sodium"]-0.01+0.01)
-    data["Bicarbonate"] = c[2].number_input("Bicarbonate (mmol/L)", min_value=0.00, step=0.01, value=originv["Bicarbonate"]-0.01+0.01)
-    data["Creatinine"] = c[3].number_input("Creatinine (mg/dL)", min_value=0.00, step=0.01, value=originv["Creatinine"]-0.01+0.01)
-    data["INR"] = c[4].number_input("INR", min_value=0.00, step=0.01, value=originv["INR"]-0.01+0.01)
+    data["Weight Admit"] = c[1].number_input("Weight Admit (kg)", min_value=0.00, step=0.01, value=originv["Weight Admit"]-0.01+0.01)
+    data["Malignant Cancer"] = BOOL[c[2].selectbox("Malignant Cancer", BOOL, index=originv["Malignant Cancer"])]
+    data["Sepsis"] = BOOL[c[3].selectbox("Sepsis", BOOL, index=originv["Sepsis"])]
+    data["AKI 7Day"] = BOOL[c[4].selectbox("AKI 7 Day", BOOL, index=originv["AKI 7Day"])]
+    data["SBP"] = c[5].number_input("SBP (mmHg)", min_value=0.00, step=0.01, value=originv["SBP"]-0.01+0.01)
+    data["DBP"] = c[0].number_input("DBP (mmHg)", min_value=0.00, step=0.01, value=originv["DBP"]-0.01+0.01)
+    data["MBP"] = c[1].number_input("MBP (mmHg)", min_value=0.00, step=0.01, value=originv["MBP"]-0.01+0.01)
+    data["Temperature"] = c[2].number_input("Temperature (℃)", min_value=0.00, step=0.01, value=originv["Temperature"]-0.01+0.01)
+    data["LAR"] = c[3].number_input("LAR", min_value=0.00, step=0.01, value=originv["LAR"]-0.01+0.01)
+    data["Hemoglobin"] = c[4].number_input("Hemoglobin (g/dL)", min_value=0.00, step=0.01, value=originv["Hemoglobin"]-0.01+0.01)
     data["WBC"] = c[5].number_input("WBC ($10^9$/L)", min_value=0.00, step=0.01, value=originv["WBC"]-0.01+0.01)
+    data["Aniongap"] = c[0].number_input("Aniongap (mmol/L)", min_value=0.00, step=0.01, value=originv["Aniongap"]-0.01+0.01)
+    data["Bicarbonate"] = c[1].number_input("Bicarbonate (mmol/L)", min_value=0.00, step=0.01, value=originv["Bicarbonate"]-0.01+0.01)
+    data["Creatinine"] = c[2].number_input("Creatinine (mg/dL)", min_value=0.00, step=0.01, value=originv["Creatinine"]-0.01+0.01)
+    data["BUN"] = c[3].number_input("BUN (mg/dL)", min_value=0.00, step=0.01, value=originv["BUN"]-0.01+0.01)
+    data["Chloride"] = c[4].number_input("Chloride (mmol/L)", min_value=0.00, step=0.01, value=originv["Chloride"]-0.01+0.01)
+    data["Sodium"] = c[5].number_input("Sodium (mmol/L)", min_value=0.00, step=0.01, value=originv["Sodium"]-0.01+0.01)
+    data["INR"] = c[0].number_input("INR", min_value=0.00, step=0.01, value=originv["INR"]-0.01+0.01)
+    data["APTT"] = c[1].number_input("APTT (s)", min_value=0.00, step=0.01, value=originv["APTT"]-0.01+0.01)
+    data["ALP"] = c[2].number_input("ALP (U/L)", min_value=0.00, step=0.01, value=originv["ALP"]-0.01+0.01)
+    data["Total Bilirubin"] = c[3].number_input("Total Bilirubin(mg/dL)", min_value=0.00, step=0.01, value=originv["Total Bilirubin"]-0.01+0.01)
+    data["GCS"] = c[4].number_input("GCS Score", min_value=0.00, step=0.01, value=originv["GCS"]-0.01+0.01)
+    data["InvasiveVent"] = BOOL[c[5].selectbox("Invasive Vent", BOOL, index=originv["InvasiveVent"])]
 
     c1 = st.columns(3)
     bt = c1[1].form_submit_button("Start predict", use_container_width=True, type="primary")
