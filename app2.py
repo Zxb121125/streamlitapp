@@ -42,6 +42,8 @@ M = ["LASSO (Model A)", "Naive Bayes (Model B)"]
 data = {}
 
 with st.form("form"):
+    m = M
+       
     c = st.columns(6)
     data["Age"] = c[0].number_input("Age (years)", min_value=0, max_value=120, value=originv["Age"])
     data["Weight Admit"] = c[1].number_input("Weight Admit (kg)", min_value=0.00, step=0.01, value=originv["Weight Admit"]-0.01+0.01)
